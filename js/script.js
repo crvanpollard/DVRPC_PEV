@@ -1,7 +1,7 @@
 /*********************************************/ 
 /******************* Modal *******************/
 /*********************************************/  
-/*var modal = document.querySelector('#modal')
+var modal = document.querySelector('#modal')
 var modalToggle = document.querySelector('#modal-toggle')
 var close = document.querySelector('#close-modal')
 
@@ -39,7 +39,7 @@ document.onkeydown = function(event) {
     }
   }
 }
-*/
+
 /*********************************************/ 
 /**************** Map ***************/
 /*********************************************/ 
@@ -73,7 +73,7 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/crvanpollard/ck5fpyqti0v971itf7edp2eyd',
     attributionControl: false,
     center: [-77.462261,40.949709 ],
-    zoom: 6
+    zoom: 7
 });
 
 function generatePopup(popup, e){
@@ -186,6 +186,8 @@ map.on('load', function() {
     'type': 'circle',
     'source': crash,
     'source-layer': 'pev',
+    'layout':{ 
+      'circle-sort-key': 1},
     'paint': {
       // make circles larger as the user zooms from z12 to z22
       'circle-radius': {
@@ -201,10 +203,6 @@ map.on('load', function() {
       '#EA563D',
       'projected',
       '#3182D1',
-    //  'NJ',
-    //  '#e55e5e',
-     // 2017,
-     // '#3bb2d0',
       /* other */ '#ccc'
       ]
       },
